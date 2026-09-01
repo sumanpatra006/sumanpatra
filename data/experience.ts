@@ -47,10 +47,10 @@ export const experience: ExperienceEntry[] = [
   {
     version: "NEXT",
     dateRange: "Now",
-    title: "Seeking Full-Time Backend / Software Engineering Roles",
+    title: "Seeking Full-Time Software Engineering & Tech Roles",
     org: "Open to High-Impact Opportunities",
     description:
-      "Ready to build high-throughput backend services, distributed systems, and resilient infrastructure at scale.",
+      "Ready to build high-throughput services, distributed systems, and resilient infrastructure at scale.",
     tech: ["Java", "Spring Boot", "Node.js", "TypeScript", "Distributed Systems", "AWS"],
     isNext: true,
   },

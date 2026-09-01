@@ -60,7 +60,7 @@ export function CyberFooter({ onOpenTerminal }: CyberFooterProps) {
               </span>
             </div>
             <p className="text-text-secondary text-xs max-w-md leading-relaxed">
-              Backend-leaning Software Engineer building high-throughput systems, event-driven architectures, and resilient cloud services.
+              Software Engineer building high-throughput systems, event-driven architectures, and resilient cloud services.
             </p>
             <div className="flex items-center gap-4 text-[11px] text-neutral-bright pt-1">
               <span className="flex items-center gap-1">

@@ -156,7 +156,7 @@ export function InteractiveTerminalModal({
 
       case "about":
         textResponse =
-          "K. Suman Patra — Backend-leaning Software Engineer\n" +
+          "K. Suman Patra — Software Engineer\n" +
           "Location:    Berhampur, Odisha, India\n" +
           "Education:   B.Tech IT @ VSSUT Burla (CGPA 9.36)\n" +
           "Experience:  SWE Intern @ JPMorgan Chase (Wealth Management), Backend Intern @ GramIQ\n" +

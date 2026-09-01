@@ -56,7 +56,7 @@ const contactData = [
   },
   {
     key: "status",
-    value: "Open to Full-Time Backend / Platform SWE Roles",
+    value: "Open to Full-Time Software Engineering & Tech Roles",
     type: "text" as const,
     icon: Activity,
   },

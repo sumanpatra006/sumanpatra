@@ -44,7 +44,7 @@ const COMMIT_META: Record<
   NEXT: {
     hash: "HEAD -> origin/career",
     branch: "main/seeking-fulltime",
-    diffAdded: "+Ready to ship backend / platform services at scale",
+    diffAdded: "+Ready to ship software engineering systems at scale",
     diffRemoved: "-0 blockers",
     author: "ksumanpatra06@gmail.com",
   },
