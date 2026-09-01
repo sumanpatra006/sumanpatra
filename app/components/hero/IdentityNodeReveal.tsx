@@ -2,7 +2,19 @@
 
 import { motion } from "framer-motion";
 import { useReducedMotion } from "@/app/hooks/useReducedMotion";
-import { CyberCatCompanion } from "@/app/components/3d/CyberCatCompanion";
+import dynamic from "next/dynamic";
+
+const CyberCatCompanion = dynamic(
+  () => import("@/app/components/3d/CyberCatCompanion").then((mod) => mod.CyberCatCompanion),
+  {
+    ssr: false,
+    loading: () => (
+      <div className="w-[280px] h-[280px] sm:w-[340px] sm:h-[340px] flex items-center justify-center rounded-lg border border-border-subtle/40 bg-bg-surface/30 font-mono text-xs text-neutral-bright">
+        <span className="animate-pulse text-accent-primary text-[11px]">[ 3D COMPANION CORE INITIALIZING... ]</span>
+      </div>
+    ),
+  }
+);
 
 interface IdentityNodeRevealProps {
   isVisible: boolean;

@@ -1,7 +1,15 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  reactStrictMode: true,
+  poweredByHeader: false,
+  compress: true,
+  turbopack: {
+    root: process.cwd(),
+  },
+  experimental: {
+    optimizePackageImports: ["lucide-react", "framer-motion", "d3", "three"],
+  },
 };
 
 export default nextConfig;
