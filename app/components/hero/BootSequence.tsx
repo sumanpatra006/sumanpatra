@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { useReducedMotion } from "@/app/hooks/useReducedMotion";
 
 const BOOT_LINES = [
@@ -23,8 +23,8 @@ interface BootSequenceProps {
 
 export function BootSequence({ onComplete }: BootSequenceProps) {
   const prefersReduced = useReducedMotion();
-  const [visibleLines, setVisibleLines] = useState(0);
-  const [isComplete, setIsComplete] = useState(false);
+  const [visibleLines, setVisibleLines] = useState(() => prefersReduced ? BOOT_LINES.length : 0);
+  const [isComplete, setIsComplete] = useState(() => prefersReduced);
   const [skipped, setSkipped] = useState(false);
 
   const skip = useCallback(() => {
@@ -38,10 +38,8 @@ export function BootSequence({ onComplete }: BootSequenceProps) {
 
   useEffect(() => {
     if (prefersReduced) {
-      setVisibleLines(BOOT_LINES.length);
-      setIsComplete(true);
-      setTimeout(onComplete, 500);
-      return;
+      const timer = setTimeout(onComplete, 300);
+      return () => clearTimeout(timer);
     }
 
     const timers: ReturnType<typeof setTimeout>[] = [];

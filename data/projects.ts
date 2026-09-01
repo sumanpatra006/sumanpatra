@@ -16,9 +16,9 @@ export interface Project {
 export const projects: Project[] = [
   {
     id: "tnp-placement-portal",
-    name: "tnp-placement-portal",
+    name: "TnP Placement Portal (VSSUT)",
     summary:
-      "End-to-end placement portal — auth, file storage, and a full application flow, built solo.",
+      "Full-stack placement management platform for VSSUT’s Training & Placement Cell. Centralized system replacing manual spreadsheet/PDF tracking for student, company, and application data with AWS S3 storage and JWT/Zod-secured APIs.",
     stack: [
       "typescript",
       "expressjs",
@@ -27,45 +27,56 @@ export const projects: Project[] = [
       "reactjs",
       "zustand",
       "aws",
-      "javascript",
+      "tailwind",
       "nodejs",
-      "sql",
+      "zod",
     ],
     links: {
-      github: "https://github.com",  // [FILL: actual GitHub URL]
+      github: "https://github.com/sumanpatra006",
     },
+    tag: "full-stack",
   },
   {
     id: "url-shortener",
-    name: "url-shortener",
+    name: "Scalable URL Shortener",
     summary:
-      "A URL shortener web app — classic system-design exercise done as a real, working project.",
-    stack: ["mongodb", "expressjs", "reactjs", "nodejs", "javascript"],
+      "Scalable MERN stack URL shortener applying system design principles for read-heavy workloads: collision-free short-code generation, indexed lookups for fast redirects, JWT auth with HTTP-only cookies, and click-analytics dashboard with Redux & TanStack Router.",
+    stack: ["mongodb", "expressjs", "reactjs", "nodejs", "redux", "javascript", "zod"],
     links: {
-      github: "https://github.com",  // [FILL: actual GitHub URL]
+      github: "https://github.com/sumanpatra006",
     },
+    tag: "system-design",
+  },
+  {
+    id: "gramiq-backend",
+    name: "GramIQ Multi-Admin Dashboard API",
+    summary:
+      "Engineered 21+ RESTful APIs for a multi-admin dashboard with role-based authentication and hierarchical access control using Node.js & Express.js. Designed database schema with Prisma ORM and integrated Redis session caching for high concurrency.",
+    stack: ["nodejs", "expressjs", "prisma", "redis", "sql", "javascript", "postman"],
+    tag: "backend-internship",
   },
   {
     id: "jpmc-c4g",
-    name: "jpmc-code-for-good",
+    name: "JPMC Code For Good Winner",
     summary:
-      "Led a team of 7 to 1st place among 60,000+ applicants at JPMorgan Chase's Code For Good Hackathon.",
-    stack: ["java", "git"],
-    tag: "team-lead",
+      "Led a team of 7 engineers to 1st position among 60,000+ applicants at J.P.Morgan Chase’s flagship Code For Good Hackathon.",
+    stack: ["java", "git", "sql"],
+    tag: "team-lead-winner",
   },
   {
     id: "jpmc-internship",
-    name: "jpmc-retry-replay",
+    name: "JPMC Asset Transfer Retry-Replay Engine",
     summary:
-      "Production reliability engineering — retry-replay mechanism for Consumer & Community Banking, Wealth Management systems.",
+      "Designed and implemented a retry-replay mechanism with DB-based transaction status tracking to auto-recover failed asset transfers on production systems at JPMorgan Chase (Wealth Management).",
     stack: ["java", "spring-boot", "jenkins", "controlm", "splunk", "sql", "git"],
+    tag: "production-resilience",
     bugStory: {
-      trigger: "Retry-replay mechanism — production reliability issue",
+      trigger: "Transient network drops & downstream database timeouts during high-volume asset transfer transactions.",
       rootCause:
-        "[FILL: Describe what was failing in the retry/replay flow — e.g., what was retried, what condition caused failures, what Splunk dashboards surfaced]",
-      fix: "[FILL: The mechanism/change you implemented — e.g., Java/Spring Boot microservice change, Control-M scheduling adjustment]",
+        "Production asset transfer flows lacked an automated retry-replay pipeline with stateful DB transaction tracking, requiring manual operational triage when downstream endpoints encountered transient failures.",
+      fix: "Architected a DB-backed transaction status tracking engine with automatic retry-replay microservice logic in Java/Spring Boot, orchestrated batch job scheduling with Control-M and Jenkins CI/CD, and constructed real-time Splunk telemetry dashboards.",
       outcome:
-        "[FILL: The measurable result — e.g., fewer failed jobs, faster detection via Splunk dashboards]",
+        "Auto-recovered failed asset transfers across production flows with automated reconciliation, real-time error visibility on Splunk",
     },
   },
 ];

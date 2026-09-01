@@ -1,26 +1,28 @@
 import type { Metadata } from "next";
-import { Chakra_Petch, Fira_Code, Plus_Jakarta_Sans } from "next/font/google";
+import { Space_Grotesk, JetBrains_Mono, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import { CRTOverlay } from "@/app/components/CRTOverlay";
 import { SmoothScrollProvider } from "@/app/components/providers/SmoothScrollProvider";
 
-const chakraPetch = Chakra_Petch({
-  variable: "--font-display",
-  weight: ["400", "500", "600", "700"],
+const spaceGrotesk = Space_Grotesk({
+  variable: "--font-space-grotesk",
   subsets: ["latin"],
   display: "swap",
+  weight: ["400", "500", "600", "700"],
 });
 
-const firaCode = Fira_Code({
-  variable: "--font-mono",
+const jetbrainsMono = JetBrains_Mono({
+  variable: "--font-jetbrains-mono",
   subsets: ["latin"],
   display: "swap",
+  weight: ["400", "500", "600", "700"],
 });
 
 const plusJakarta = Plus_Jakarta_Sans({
   variable: "--font-sans",
   subsets: ["latin"],
   display: "swap",
+  weight: ["400", "500", "600", "700", "800"],
 });
 
 export const metadata: Metadata = {
@@ -39,13 +41,13 @@ export const metadata: Metadata = {
   authors: [{ name: "K. Suman Patra" }],
 };
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html
       lang="en"
-      className={`${chakraPetch.variable} ${firaCode.variable} ${plusJakarta.variable} h-full`}
+      className={`${spaceGrotesk.variable} ${jetbrainsMono.variable} ${plusJakarta.variable} h-full`}
     >
-      <body className="min-h-full flex flex-col antialiased">
+      <body className="min-h-full flex flex-col antialiased bg-bg-primary text-text-primary">
         <CRTOverlay />
         <SmoothScrollProvider>{children}</SmoothScrollProvider>
       </body>

@@ -326,8 +326,6 @@ export function ForceGraphEngine() {
       });
 
     // Simulation & Packet Loop
-    let packetTimer: d3.Timer;
-
     simulation.on("tick", () => {
       // Auto-constrain within bounds
       nodes.forEach((d) => {
@@ -344,7 +342,7 @@ export function ForceGraphEngine() {
       node.attr("transform", (d) => `translate(${d.x || 0},${d.y || 0})`);
     });
 
-    packetTimer = d3.timer(() => {
+    const packetTimer = d3.timer(() => {
       packets.each(function (d, i) {
         const src = d.source as GraphNodeItem;
         const tgt = d.target as GraphNodeItem;
@@ -385,34 +383,35 @@ export function ForceGraphEngine() {
   return (
     <div ref={containerRef} className="relative w-full overflow-hidden select-none">
       {/* Top Status & Dedicated Zoom Controls */}
-      <div className="flex items-center justify-between mb-2">
-        <div className="flex items-center gap-2 font-mono text-[11px] text-text-secondary bg-bg-surface/80 px-3 py-1.5 rounded-full border border-border-subtle shadow-md backdrop-blur-sm">
-          <Activity className="w-3.5 h-3.5 text-accent-primary animate-pulse" />
-          <span>Full-Bleed Physics Network • Circular Badges &amp; Data Packets</span>
+      <div className="flex items-center justify-between mb-2 gap-2 flex-wrap sm:flex-nowrap">
+        <div className="flex items-center gap-2 font-mono text-[10px] sm:text-[11px] text-text-secondary bg-bg-surface/80 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full border border-border-subtle shadow-md backdrop-blur-sm">
+          <Activity className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-accent-primary animate-pulse" />
+          <span className="hidden sm:inline">Full-Bleed Physics Network • Interactive Dependency Graph</span>
+          <span className="sm:hidden">Physics Dependency Graph</span>
         </div>
 
         {/* Dedicated Zoom Control Buttons */}
-        <div className="flex items-center gap-1 bg-bg-surface/85 p-1 rounded-full border border-border-accent shadow-md backdrop-blur-sm">
+        <div className="flex items-center gap-1 bg-bg-surface/85 p-0.5 sm:p-1 rounded-full border border-border-accent shadow-md backdrop-blur-sm">
           <button
             onClick={handleZoomIn}
-            className="p-1.5 hover:bg-bg-elevated text-text-secondary hover:text-accent-primary rounded-full transition-colors cursor-pointer"
+            className="p-1 sm:p-1.5 hover:bg-bg-elevated text-text-secondary hover:text-accent-primary rounded-full transition-colors cursor-pointer"
             title="Zoom In"
           >
-            <ZoomIn className="w-4 h-4" />
+            <ZoomIn className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
           </button>
           <button
             onClick={handleZoomOut}
-            className="p-1.5 hover:bg-bg-elevated text-text-secondary hover:text-accent-primary rounded-full transition-colors cursor-pointer"
+            className="p-1 sm:p-1.5 hover:bg-bg-elevated text-text-secondary hover:text-accent-primary rounded-full transition-colors cursor-pointer"
             title="Zoom Out"
           >
-            <ZoomOut className="w-4 h-4" />
+            <ZoomOut className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
           </button>
           <button
             onClick={handleResetZoom}
-            className="p-1.5 hover:bg-bg-elevated text-text-secondary hover:text-accent-primary rounded-full transition-colors cursor-pointer"
+            className="p-1 sm:p-1.5 hover:bg-bg-elevated text-text-secondary hover:text-accent-primary rounded-full transition-colors cursor-pointer"
             title="Reset View"
           >
-            <RotateCcw className="w-4 h-4" />
+            <RotateCcw className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
           </button>
         </div>
       </div>
@@ -420,7 +419,7 @@ export function ForceGraphEngine() {
       {/* SVG Canvas (Full-bleed, seamless against page background) */}
       <svg
         ref={svgRef}
-        className="w-full h-[560px] md:h-[640px] block cursor-default"
+        className="w-full h-[460px] sm:h-[540px] md:h-[640px] block cursor-default"
       />
 
       {/* Floating Info Panel on hover */}

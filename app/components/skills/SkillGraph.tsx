@@ -14,7 +14,7 @@ export function SkillGraph() {
         <div className="flex items-center gap-2 mb-2">
           <span className="text-accent-primary text-xs font-mono">02 //</span>
           <motion.h2
-            className="font-display text-text-primary text-lg md:text-xl font-bold tracking-wide"
+            className="font-display text-text-primary text-lg sm:text-xl md:text-2xl font-bold tracking-wide"
             initial={{ opacity: 0, y: 10 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.4 }}
@@ -24,7 +24,7 @@ export function SkillGraph() {
         </div>
 
         <motion.p
-          className="text-text-secondary text-sm mb-6 font-mono max-w-2xl"
+          className="text-text-secondary text-xs sm:text-sm mb-4 sm:mb-6 font-mono max-w-2xl"
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : {}}
           transition={{ delay: 0.2, duration: 0.4 }}

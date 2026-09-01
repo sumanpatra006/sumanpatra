@@ -16,7 +16,7 @@ export function SectionContainer({
   return (
     <section
       id={id}
-      className={`relative w-full px-6 md:px-8 py-20 md:py-28 ${className}`}
+      className={`relative w-full px-4 sm:px-6 md:px-8 py-12 sm:py-18 md:py-24 ${className}`}
     >
       <div
         className={`mx-auto ${wide ? "max-w-[1300px]" : "max-w-[1150px]"}`}

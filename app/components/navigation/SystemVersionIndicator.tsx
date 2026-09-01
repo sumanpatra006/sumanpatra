@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { useReducedMotion } from "@/app/hooks/useReducedMotion";
 
 const SECTIONS = [
   { id: "hero", version: "SYS", label: "BOOT" },
@@ -14,7 +13,6 @@ const SECTIONS = [
 
 export function SystemVersionIndicator() {
   const [activeSection, setActiveSection] = useState("hero");
-  const prefersReduced = useReducedMotion();
 
   useEffect(() => {
     const observers: IntersectionObserver[] = [];

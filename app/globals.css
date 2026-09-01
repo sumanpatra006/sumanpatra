@@ -10,139 +10,68 @@
    High-tech distributed systems & cloud architecture aesthetic.
    ───────────────────────────────────────────────────────────────────────── */
 :root {
-  /* 1. Core Canvas & Surface */
-  --bg-primary: #06090f;
-  --bg-secondary: #0b111d;
-  --bg-surface: #0f172a;
-  --bg-elevated: #1e293b;
-
-  /* 2. Primary Highlight & Brand Energy */
-  --accent-primary: #00f0ff;          /* Electric Cyan */
-  --accent-primary-dim: rgba(0, 240, 255, 0.15);
-  --accent-primary-glow: 0 0 16px rgba(0, 240, 255, 0.4), 0 0 32px rgba(0, 240, 255, 0.2);
-
-  /* 3. Secondary Complementary Accent */
-  --accent-secondary: #818cf8;        /* Hyper Violet / Plasma */
-  --accent-secondary-dim: rgba(129, 140, 248, 0.15);
-
-  /* 4. Production Incident / Error Alert (Glitch moment ONLY) */
-  --accent-error: #fb7185;            /* Neon Rose */
-  --accent-error-dim: rgba(251, 113, 133, 0.2);
-  --accent-error-glow: 0 0 16px rgba(251, 113, 133, 0.4);
-
-  /* Typography & Neutrals */
-  --text-primary: #f8fafc;
-  --text-secondary: #94a3b8;
-  --neutral-dim: #1e293b;
-  --neutral-base: #334155;
-  --neutral-bright: #64748b;
-  --neutral-text: #94a3b8;
-
-  /* Borders & Glass */
-  --border-subtle: rgba(255, 255, 255, 0.08);
-  --border-accent: rgba(0, 240, 255, 0.3);
-}
-
-/* ─────────────────────────────────────────────────────────────────────────
-   [PRESET 2: UNCOMMENT TO TEST] — OPTION 2: INDUSTRIAL SOLAR AMBER
-   Warm aerospace telemetry & Bloomberg/NASA mainframe aesthetic.
-   ───────────────────────────────────────────────────────────────────────── */
-/*
-:root {
-  --bg-primary: #0a0b0e;
-  --bg-secondary: #12141a;
-  --bg-surface: #181b22;
-  --bg-elevated: #222631;
-
-  --accent-primary: #ff9e3b;          // Solar Amber
-  --accent-primary-dim: rgba(255, 158, 59, 0.15);
-  --accent-primary-glow: 0 0 16px rgba(255, 158, 59, 0.4), 0 0 32px rgba(255, 158, 59, 0.2);
-
-  --accent-secondary: #38bdf8;        // Ice Blue Telemetry
-  --accent-secondary-dim: rgba(56, 189, 248, 0.15);
-
-  --accent-error: #ef4444;            // Crimson Warning
-  --accent-error-dim: rgba(239, 68, 68, 0.2);
-  --accent-error-glow: 0 0 16px rgba(239, 68, 68, 0.4);
-
-  --text-primary: #f3f4f6;
-  --text-secondary: #9ca3af;
-  --neutral-dim: #1f232d;
-  --neutral-base: #374151;
-  --neutral-bright: #6b7280;
-  --border-subtle: rgba(255, 255, 255, 0.08);
-  --border-accent: rgba(255, 158, 59, 0.3);
-}
-*/
-
-/* ─────────────────────────────────────────────────────────────────────────
-   [PRESET 3: UNCOMMENT TO TEST] — RETRO TERMINAL PHOSPHOR GREEN
-   Classic Matrix / Unix terminal CRT monitor aesthetic.
-   ───────────────────────────────────────────────────────────────────────── */
-/*
-:root {
+  /* 1. Core Canvas & Surface — Midnight Cyber Slate */
   --bg-primary: #0a0e14;
   --bg-secondary: #0d1117;
   --bg-surface: #111820;
   --bg-elevated: #161b22;
 
-  --accent-primary: #39ff88;          // Phosphor Green
-  --accent-primary-dim: rgba(57, 255, 136, 0.15);
-  --accent-primary-glow: 0 0 16px rgba(57, 255, 136, 0.4), 0 0 32px rgba(57, 255, 136, 0.2);
+  /* 2. Primary Highlight & Brand Energy — Neon Phosphor Green */
+  --accent-primary: #39ff88;          /* Neon Phosphor Green */
+  --accent-primary-dim: rgba(57, 255, 136, 0.16);
+  --accent-primary-glow: 0 0 16px rgba(57, 255, 136, 0.45), 0 0 32px rgba(57, 255, 136, 0.25);
 
-  --accent-secondary: #00e5ff;        // Cyan Pulse
-  --accent-secondary-dim: rgba(0, 229, 255, 0.15);
+  /* 3. Secondary Complementary Accent — Cyber Cyan */
+  --accent-secondary: #00e5ff;        /* Cyber Cyan */
+  --accent-secondary-dim: rgba(0, 229, 255, 0.16);
+  --accent-secondary-glow: 0 0 16px rgba(0, 229, 255, 0.4);
 
-  --accent-error: #ff5555;            // Glitch Red
+  /* 4. Production Incident / Error Alert */
+  --accent-error: #ff5555;            /* Neon Red/Coral */
   --accent-error-dim: rgba(255, 85, 85, 0.2);
   --accent-error-glow: 0 0 16px rgba(255, 85, 85, 0.4);
 
-  --text-primary: #e6edf3;
-  --text-secondary: #8b949e;
+  /* Typography & Neutrals — High Contrast Cyber Matrix */
+  --text-primary: #e6edf3;            /* High Contrast Cloud White */
+  --text-secondary: #8b949e;          /* Muted Tech Grey */
   --neutral-dim: #21262d;
   --neutral-base: #3b4252;
   --neutral-bright: #4c566a;
-  --border-subtle: rgba(255, 255, 255, 0.08);
-  --border-accent: rgba(57, 255, 136, 0.3);
+  --neutral-text: #8b949e;
+
+  /* Borders & Glass */
+  --border-subtle: rgba(230, 237, 243, 0.09);
+  --border-accent: rgba(57, 255, 136, 0.35);
 }
- */
 
 /* ─────────────────────────────────────────────────────────────────────────
-   [PRESET 4: UNCOMMENT TO TEST] — MIDNIGHT AURORA (NEO-MINT & VIOLET)
-   Stripe / Supabase dark multi-chromatic glow.
+   [PALETTE 2: TEST PRESET] — VIVID ORANGE, DEEP PURPLE, SOFT MINT & DARK SLATE
    ───────────────────────────────────────────────────────────────────────── */
-/*
-:root {
-  --bg-primary: #080811;
-  --bg-secondary: #0e0f1e;
-  --bg-surface: #15162c;
-  --bg-elevated: #1f213d;
-
-  --accent-primary: #00f5a0;          // Neo-Mint
-  --accent-primary-dim: rgba(0, 245, 160, 0.15);
-  --accent-primary-glow: 0 0 16px rgba(0, 245, 160, 0.4), 0 0 32px rgba(0, 245, 160, 0.2);
-
-  --accent-secondary: #a855f7;        // Quantum Purple
-  --accent-secondary-dim: rgba(168, 85, 247, 0.15);
-
-  --accent-error: #f43f5e;            // Hot Rose
-  --accent-error-dim: rgba(244, 63, 94, 0.2);
-  --accent-error-glow: 0 0 16px rgba(244, 63, 94, 0.4);
-
-  --text-primary: #f8fafc;
-  --text-secondary: #94a3b8;
-  --neutral-dim: #1e1e38;
-  --neutral-base: #37375e;
-  --neutral-bright: #68689c;
-  --border-subtle: rgba(255, 255, 255, 0.08);
-  --border-accent: rgba(0, 245, 160, 0.3);
+html[data-theme="palette2"] {
+  --bg-primary: #2f3640;
+  --bg-secondary: #242a32;
+  --bg-surface: #353b48;
+  --bg-elevated: #404956;
+  --accent-primary: #ff7675;          /* Vivid Orange / Coral */
+  --accent-primary-dim: rgba(255, 118, 117, 0.2);
+  --accent-primary-glow: 0 0 16px rgba(255, 118, 117, 0.45), 0 0 32px rgba(255, 118, 117, 0.2);
+  --accent-secondary: #6c5ce7;        /* Deep Purple */
+  --accent-secondary-dim: rgba(108, 92, 231, 0.2);
+  --accent-secondary-glow: 0 0 16px rgba(108, 92, 231, 0.4);
+  --accent-error: #fab1a0;
+  --accent-error-dim: rgba(250, 177, 160, 0.2);
+  --text-primary: #f5f6fa;
+  --text-secondary: #55e6c1;          /* Soft Mint highlight text */
+  --neutral-dim: #1e272e;
+  --neutral-base: #4b6584;
+  --neutral-bright: #778ca3;
+  --border-subtle: rgba(255, 255, 255, 0.1);
+  --border-accent: rgba(255, 118, 117, 0.4);
 }
-*/
 
-
-/* ═════════════════════════════════════════════════════════════════════════
-   RUNTIME DATA-THEME SELECTOR (Allows live one-click switching in UI)
-   ═════════════════════════════════════════════════════════════════════════ */
+/* ─────────────────────────────────────────────────────────────────────────
+   [PRESET: INDUSTRIAL SOLAR AMBER]
+   ───────────────────────────────────────────────────────────────────────── */
 html[data-theme="amber"] {
   --bg-primary: #0a0b0e;
   --bg-secondary: #12141a;
@@ -164,6 +93,9 @@ html[data-theme="amber"] {
   --border-accent: rgba(255, 158, 59, 0.3);
 }
 
+/* ─────────────────────────────────────────────────────────────────────────
+   [PRESET: RETRO TERMINAL PHOSPHOR GREEN]
+   ───────────────────────────────────────────────────────────────────────── */
 html[data-theme="green"] {
   --bg-primary: #0a0e14;
   --bg-secondary: #0d1117;
@@ -185,6 +117,9 @@ html[data-theme="green"] {
   --border-accent: rgba(57, 255, 136, 0.3);
 }
 
+/* ─────────────────────────────────────────────────────────────────────────
+   [PRESET: MIDNIGHT AURORA]
+   ───────────────────────────────────────────────────────────────────────── */
 html[data-theme="aurora"] {
   --bg-primary: #080811;
   --bg-secondary: #0e0f1e;

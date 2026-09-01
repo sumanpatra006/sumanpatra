@@ -15,6 +15,8 @@ import { projects } from "@/data/projects";
 import { useInView } from "@/app/hooks/useInView";
 import { motion } from "framer-motion";
 
+import { CyberFooter } from "@/app/components/navigation/CyberFooter";
+
 export default function Home() {
   const [loadingComplete, setLoadingComplete] = useState(false);
   const [bootComplete, setBootComplete] = useState(false);
@@ -72,15 +74,8 @@ export default function Home() {
           {/* Contact Section: GET /api/v1/contact Payload Card */}
           <EndpointResponseCard />
 
-          {/* Footer */}
-          <footer className="py-12 text-center border-t border-border-subtle bg-bg-surface/30 font-mono">
-            <p className="text-text-secondary text-xs">
-              HUMAN.EXE v4.0.0 — Engineered with Next.js 16, Three.js, D3 &amp; GSAP
-            </p>
-            <p className="text-neutral-bright text-[11px] mt-2">
-              © {new Date().getFullYear()} K. Suman Patra. All system threads active.
-            </p>
-          </footer>
+          {/* Futuristic Cyber Telemetry Footer */}
+          <CyberFooter onOpenTerminal={() => setTerminalOpen(true)} />
         </>
       )}
     </>
@@ -96,7 +91,7 @@ function ProjectsSection() {
         <div className="flex items-center gap-2 mb-2">
           <span className="text-accent-primary text-xs font-mono">03 //</span>
           <motion.h2
-            className="font-display text-text-primary text-xl md:text-2xl font-bold tracking-wide"
+            className="font-display text-text-primary text-lg sm:text-xl md:text-2xl font-bold tracking-wide"
             initial={{ opacity: 0, y: 10 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.4 }}
@@ -106,7 +101,7 @@ function ProjectsSection() {
         </div>
 
         <motion.p
-          className="text-text-secondary text-sm mb-8 font-mono max-w-2xl"
+          className="text-text-secondary text-xs sm:text-sm mb-6 sm:mb-8 font-mono max-w-2xl"
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : {}}
           transition={{ delay: 0.2, duration: 0.4 }}

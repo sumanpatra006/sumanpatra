@@ -25,12 +25,10 @@ export function SystemLoader({ onComplete }: SystemLoaderProps) {
   const prefersReduced = useReducedMotion();
   const [phase, setPhase] = useState<
     "post" | "diagnostics" | "progress" | "nodes" | "ready" | "done"
-  >("post");
-  const [progress, setProgress] = useState(0);
-  const [visibleDiagnostics, setVisibleDiagnostics] = useState(0);
+  >(() => prefersReduced ? "diagnostics" : "post");
+  const [progress, setProgress] = useState(() => prefersReduced ? 100 : 0);
+  const [visibleDiagnostics, setVisibleDiagnostics] = useState(() => prefersReduced ? DIAGNOSTICS.length : 0);
   const [isExiting, setIsExiting] = useState(false);
-
-  const duration = prefersReduced ? REDUCED_DURATION : TOTAL_DURATION;
 
   const handleSkip = useCallback(() => {
     if (phase !== "done") {
@@ -46,9 +44,6 @@ export function SystemLoader({ onComplete }: SystemLoaderProps) {
   useEffect(() => {
     if (prefersReduced) {
       // Reduced motion: quick fade, all content instant
-      setPhase("diagnostics");
-      setVisibleDiagnostics(DIAGNOSTICS.length);
-      setProgress(100);
       const timer = setTimeout(() => {
         setIsExiting(true);
         setTimeout(() => {
