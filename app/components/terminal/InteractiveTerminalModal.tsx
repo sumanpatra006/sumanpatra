@@ -130,9 +130,29 @@ export function InteractiveTerminalModal({
           "• jpmc         - JPMorgan Chase internship & reliability engine\n" +
           "• achievements - Hackathon wins & campus leadership\n" +
           "• contact      - Endpoint connection credentials\n" +
+          "• time         - Current Indian Standard Time (IST)\n" +
           "• clear        - Clear terminal output buffer\n" +
           "• exit         - Close terminal shell";
         break;
+
+      case "time":
+      case "date":
+      case "clock": {
+        const now = new Date();
+        const istDate = now.toLocaleDateString("en-IN", {
+          timeZone: "Asia/Kolkata",
+          weekday: "long",
+          year: "numeric",
+          month: "long",
+          day: "numeric",
+        });
+        const istTime = now.toLocaleTimeString("en-IN", {
+          timeZone: "Asia/Kolkata",
+          hour12: false,
+        });
+        textResponse = `SYSTEM CLOCK (IST / UTC+05:30):\n• Time: ${istTime} IST\n• Date: ${istDate}\n• Gateway Region: IN-BLR-01 (India)`;
+        break;
+      }
 
       case "about":
         textResponse =

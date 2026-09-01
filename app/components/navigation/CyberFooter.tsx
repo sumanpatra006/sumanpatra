@@ -19,7 +19,14 @@ export function CyberFooter({ onOpenTerminal }: CyberFooterProps) {
 
     const updateClock = () => {
       const now = new Date();
-      setCurrentTime(now.toUTCString().slice(17, 25) + " UTC");
+      const istTime = now.toLocaleTimeString("en-IN", {
+        timeZone: "Asia/Kolkata",
+        hour12: false,
+        hour: "2-digit",
+        minute: "2-digit",
+        second: "2-digit",
+      });
+      setCurrentTime(`${istTime} IST`);
     };
     updateClock();
     const clockInterval = setInterval(updateClock, 1000);
