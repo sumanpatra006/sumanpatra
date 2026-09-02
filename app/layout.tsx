@@ -3,6 +3,7 @@ import { Space_Grotesk, JetBrains_Mono, Plus_Jakarta_Sans } from "next/font/goog
 import "./globals.css";
 import { CRTOverlay } from "@/app/components/CRTOverlay";
 import { SmoothScrollProvider } from "@/app/components/providers/SmoothScrollProvider";
+import { Analytics } from "@vercel/analytics/next";
 
 const spaceGrotesk = Space_Grotesk({
   variable: "--font-space-grotesk",
@@ -196,6 +197,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="min-h-full flex flex-col antialiased bg-bg-primary text-text-primary">
         <CRTOverlay />
         <SmoothScrollProvider>{children}</SmoothScrollProvider>
+        <Analytics />
       </body>
     </html>
   );
